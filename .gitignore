@@ -46,7 +46,7 @@ cover/
 
 # uv
 .venv
-uv.lock
+
 
 # Ruff
 .ruff_cache/
