@@ -1,0 +1,40 @@
+[project]
+name = "my-dev-reference-guide"
+version = "0.1.0"
+description = "My personal developer reference guide and portfolio showing how I work."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.1.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint]
+# E: Error, F: Pyflakes, I: Isort (auto-sort imports), N: Naming conventions
+select = ["E", "F", "I", "N"]
+ignore = ["D100"] 
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
